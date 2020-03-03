@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -18,13 +19,17 @@ public class Product {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-    @Column(name = "description", nullable = false, unique = true)
+    @Column(name = "description")
     private String description;
 
     @Column(name = "price", nullable = false)
-    private Double price;
+    private double price;
 
     @Column(name = "weight", nullable = false)
-    private Double weight;
+    private double weight;
+
+    @JoinColumn(name = "category", nullable = false)
+    @OneToOne
+    private Category category;
 
 }
