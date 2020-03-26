@@ -1,4 +1,4 @@
-package pl.konrad.rest.springrest.rest;
+package pl.konrad.rest.springrest.contoller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
